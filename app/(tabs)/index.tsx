@@ -1,48 +1,31 @@
-import { View, Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import LottieView from 'lottie-react-native';
-import { useRef } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
-  const animation = useRef(null);
-
   return (
-    <View style={{ backgroundColor: '#ffff80', flex: 1}}>
-      <ThemedView>
-        <LottieView
-          autoPlay
-          ref={animation}
-          style={{
-            width: 400,
-            height: 400,
-            position: 'absolute',
-          }}
-          source={require('../../assets/dog.json')}
-        />
-      </ThemedView>
-    </View>
+    <SafeAreaView>
+      <ThemedText type="h1">Header 1</ThemedText>
+      <ThemedText type="h2">Header 2</ThemedText>
+      <ThemedText type="h3">Header 3</ThemedText>
+      <ThemedText type="h4">Header 4</ThemedText>
+      <ThemedText type="h5">Header 5</ThemedText>
+      <ThemedText type="h6">Header 6</ThemedText>
+
+      <ThemedText type="large-sb">Body Large SemiBold</ThemedText>
+      <ThemedText type="large-m">Body Large Medium</ThemedText>
+      <ThemedText type="large-r">Body Large Regular</ThemedText>
+
+      <ThemedText type="medium-sb">Body Medium SemiBold</ThemedText>
+      <ThemedText type="medium-m">Body Medium Medium</ThemedText>
+      <ThemedText type="medium-r">Body Medium Regular</ThemedText>
+
+      <ThemedText type="small-sb">Body Small SemiBold</ThemedText>
+      <ThemedText type="small-m">Body Small Medium</ThemedText>
+      <ThemedText type="small-r">Body Small Regular</ThemedText>
+
+      <ThemedText type="xsmall-sb">Body XSmall SemiBold</ThemedText>
+      <ThemedText type="xsmall-m">Body XSmall Medium</ThemedText>
+      <ThemedText type="xsmall-r">Body XSmall Regular</ThemedText>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});

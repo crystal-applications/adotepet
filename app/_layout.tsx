@@ -4,12 +4,15 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import * as NavigationBar from 'expo-navigation-bar';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  NavigationBar.setBackgroundColorAsync("white");
+
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     InterRegular: require('../assets/fonts/InterTight-Regular.ttf'),

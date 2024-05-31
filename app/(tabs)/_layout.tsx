@@ -2,19 +2,15 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-import { View } from 'react-native';
+import { primary300 } from '@/constants/Colors';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#FF407D',
+        tabBarActiveTintColor: primary300,
         headerShown: false,
-        tabBarLabelStyle: { fontSize: 12, marginBottom: 5 },
+        tabBarLabelStyle: { fontSize: 12, marginBottom: 5, fontFamily: 'InterRegular' },
         tabBarStyle: { height: 65, paddingTop: 5, shadowColor: 'transparent' },
       }}
     >

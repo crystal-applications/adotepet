@@ -1,8 +1,8 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { primary300 } from '@/constants/Colors';
+import { Heart, Home, Map, Message, User } from '@/components/icons';
 
 export default function TabLayout() {
   return (
@@ -11,15 +11,15 @@ export default function TabLayout() {
         tabBarActiveTintColor: primary300,
         headerShown: false,
         tabBarLabelStyle: { fontSize: 12, marginBottom: 5, fontFamily: 'InterRegular' },
-        tabBarStyle: { height: 65, paddingTop: 5, shadowColor: 'transparent' },
+        tabBarStyle: { height: 60, paddingTop: 5, shadowColor: 'transparent' },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name="home" color={color} />
+          tabBarIcon: ({ color }) => (
+            <Home color={color} />
           ),
         }}
       />
@@ -27,8 +27,8 @@ export default function TabLayout() {
         name="map"
         options={{
           title: 'Mapa',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name="map" color={color} />
+          tabBarIcon: ({ color }) => (
+            <Map color={color} />
           ),
         }}
       />
@@ -36,8 +36,8 @@ export default function TabLayout() {
         name="favorite"
         options={{
           title: 'Favoritos',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name="heart" color={color} />
+          tabBarIcon: ({ color }) => (
+            <Heart color={color} />
           ),
         }}
       />
@@ -45,8 +45,8 @@ export default function TabLayout() {
         name="message"
         options={{
           title: 'Mensagens',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name="message-square" color={color} />
+          tabBarIcon: ({ color }) => (
+            <Message color={color} />
           ),
         }}
       />
@@ -54,8 +54,8 @@ export default function TabLayout() {
         name="account"
         options={{
           title: 'Conta',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name="user" color={color} />
+          tabBarIcon: ({ color }) => (
+            <User color={color} />
           ),
         }}
       />
